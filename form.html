@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@200&family=Noto+Sans+TC:wght@500&display=swap" rel="stylesheet">
+    <style>
+        
+        /* @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap'); */
+        
+        form {
+            width: 700px;
+            /* max-width:600px; */
+            background-color: chartreuse;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        fieldset {
+            background-color: lightcoral;
+            text-align: left;
+        }
+
+        textarea {
+            /* background-color: red; */
+            /* box-sizing: content-box; */
+            resize: none;
+            text-align: left;
+            width: 200px;
+        }
+
+        .st1 {
+            /* background-color: cyan; */
+            background-color: rgb(0, 247, 255);
+            width: inherit;
+            border-bottom: 3px dashed orange;
+            text-align: left;
+            padding: 30px;
+            /* margin-left: 50px; */
+            text-align: justify;
+        }
+
+        .btn {
+            background-color: rgb(238, 255, 0);
+            width: inherit;
+            text-align: center;
+            /* margin: 15px; */
+        }
+
+        .label {
+            background-color: rgb(84, 212, 72);
+            /* color: yellow; */
+            float: left;
+            width: 150px;
+            text-align: center;
+            font-family: 'test1', "Noto Sans TC", serif;
+            font-size: 20px;
+        }
+
+        .video {
+            border: 2px black solid;
+            padding: 3px;
+        }
+    </style>
+    <script>
+        function hhhh() {
+            let n = document.getElementById("range1").value;
+            console.log(n);
+            document.getElementById("range2").value = n;
+        }
+        function aaa(){
+            let n = document.getElementById("range2").value;
+            console.log(n);
+            document.getElementById("range1").value = n;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="GET" enctype="multipart/form-data">
+        <fieldset>
+            <legend>1st part</legend>
+            <div class="st1">
+                <label class="label" for="user">姓名</label>
+                <input type="text" id="user" name="user" placeholder="pls key-in name" size="15"> <br>
+            </div>
+            <div class="st1">
+                <label class="label" for="pwd">密碼</label>
+                <input type="password" id="pwd" name="pwd" size="15" maxlength="6"
+                    placeholder="pls type 6 digit code" required="required"><br>
+            </div>
+            <div class="st1">
+                <label class="label" for="reason">回饋</label>
+                <textarea rows="5" id="reason" name="reason"></textarea><br>
+            </div>
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>2nd part</legend>
+            <div class="st1">
+                <label for="gender" class="label">性別</label>
+                <label><input type="radio" name="gender" id="gender" value="male">male</label>
+                <label><input type="radio" name="gender" id="gender" value="female">female</label>
+            </div>
+
+            <div class="st1">
+                <span class="label">興趣</span>
+                <label><input type="checkbox" name="hobby" id="hobby" value="sport">運動</label>
+                <label><input type="checkbox" name="hobby" id="hobby" value="music">音樂</label>
+                <label><input type="checkbox" name="hobby" id="hobby" value="dance" checked>舞蹈</label>
+            </div>
+
+            <div class="st1"><input type="image" src></div>
+
+
+        </fieldset>
+
+        <fieldset>
+            <legend>3rd part</legend>
+            <div class="st1">
+                <label for="" class="label">idcode</label>
+                <input type="text" name="idcode" id="idcode" pattern="[a-zA-Z][1|2]\d{8}" placeholder="A123456789"
+                    autocomplete="on">
+            </div>
+
+            <div class="st1">
+                <input type="range" min="-3" max="500" name="" id="range1" onchange="hhhh()">
+                <input type="text" id="range2" onchange="aaa()" >
+            </div>
+
+            <div class="st1">
+                <label for="" class="label">blank</label>
+                <input type="text" name="" id="" readonly value="45666">
+            </div>
+            <div class="st1">
+                <span class="label">地址</span>
+                <select name="address" id="address" multiple required="required">
+                    <option value="tpe">TAIPEi</option>
+                    <option value="ilan">ILAN</option>
+                    <option value="TAINAN">TAINAN</option>
+                </select></div>
+
+            <div class="st1">
+                <span class="label">完整地址</span>
+                <input type="text" name="fullad" size="20px" pattern="[a-z]">
+            </div>
+            <div class="st1">
+                <span class="label">選擇上傳項目</span>
+                <input type="file" id="file" name="file">
+
+            </div>
+            <div class="st1">
+                <label for="url" class="label">url</label>
+                <input type="url" name="url1" id="url" placeholder="http://">
+            </div>
+
+            <div class="st1">
+                <label for="datalist" class="label">datalist 功能測試</label>
+                <input type="text" name="" id="datalist" list="aa">
+                <datalist id="aa">
+                    <option value="aaa"></option>
+                    <option value="bbb"></option>
+                    <option value="333"></option>
+                </datalist>
+            </div>
+
+            <div class="btn">
+                <input type="submit" value="submit">
+                <input type="reset" value="clear">
+            </div>
+        </fieldset>
+
+    </form>
+    <hr>
+    <!-- <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57842.243764459585!2d121.47747922129881!3d25.029314540936774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abd379a5ec97%3A0xedc006d25a9e35df!2z6LOH562W5pyDIOaVuOS9jeaVmeiCsueglOeptuaJgCDmlbjkvY3kurrmiY3ln7nogrLkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1593394928064!5m2!1szh-TW!2stw"
+        width="600" height="450" allow fullscreen frameborder="0" style="border:0;" allowfullscreen=""
+        aria-hidden="false" tabindex="0"></iframe>
+
+    <iframe class="video" width="956" height="538" src="https://www.youtube.com/embed/ye4jAQ0uxcQ" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+    <figure>
+        &lt;div class="btn">
+        <input type="submit" value="submit">
+        <input type="reset" value="clear">
+        &lt;/div>
+    </figure>
+
+    <figure>
+        <code>&lt;div class="btn">
+            &lt;input type="submit" value="submit">
+            &lt;input type="reset" value="clear">
+        &lt;/div></code>
+
+    </figure>
+</body>
+
+</html>
+
+
+
+
+
